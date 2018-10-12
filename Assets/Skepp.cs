@@ -15,7 +15,7 @@ public class Skepp : MonoBehaviour
     void Start()
     {
         //När spelet startas placeras man på en random location
-        transform.position = new Vector3(Random.Range(-10f, 10f), Random.Range(-5f, 5f));
+        transform.position = new Vector3(Random.Range(-9f, 9f), Random.Range(-5f, 5f));
         //Skeppets fart blir random vid start av spel.
         speed = Random.Range(4, 8);
     }
@@ -51,22 +51,14 @@ public class Skepp : MonoBehaviour
             rend.color = new Color(0f, 0f, 1f);
         }
         //När S är nertryckt så händer något
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             //Skeppet åker långsammare
-            transform.Translate(
-            speed / 4 * Time.deltaTime,
-            0f,
-            0f);
+            speed = speed / 2;
         }
-        //Om S inte är intryckt så
-        else
+        if (Input.GetKeyUp(KeyCode.S))
         {
-            //Skeppet åker vanlig fart
-            transform.Translate(
-            speed * Time.deltaTime,
-            0f,
-            0f);
+            speed = speed * 2;
         }
         //Timern ökar
         timer = timer + 1 * Time.deltaTime;
@@ -85,13 +77,13 @@ public class Skepp : MonoBehaviour
             rend.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         }
         //När skeppet kör in i kanterna warpas den till andra sidan
-        if (transform.position.x >= 10)
+        if (transform.position.x >= 9)
         {
-            transform.position = new Vector3(transform.position.y, - 10);
+            transform.position = new Vector3(transform.position.y, - 9);
         }
-        if (transform.position.x <= -10)
+        if (transform.position.x <= -9)
         {
-            transform.position = new Vector3(10, transform.position.y);
+            transform.position = new Vector3(9, transform.position.y);
         }
         if (transform.position.y >= 5)
         {
