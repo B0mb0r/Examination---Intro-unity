@@ -77,21 +77,21 @@ public class Skepp : MonoBehaviour
             rend.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         }
         //När skeppet kör in i kanterna warpas den till andra sidan
-        if (transform.position.x >= 9)
+        if (transform.position.x > 9)
         {
-            transform.position = new Vector3(transform.position.y, - 9);
+            transform.position = new Vector3(-9, transform.position.y, 0);
         }
         if (transform.position.x <= -9)
         {
-            transform.position = new Vector3(9, transform.position.y);
+            transform.position = new Vector3(9, transform.position.y, 0);
         }
         if (transform.position.y >= 5)
         {
-            transform.position = new Vector3(-5, transform.position.x);
+            transform.position = new Vector3(transform.position.x, -5, 0);
         }
         if (transform.position.y <= -5)
         {
-            transform.position = new Vector3(transform.position.x, 5);
+            transform.position = new Vector3(transform.position.x, 5, 0);
         }
     }
 }
