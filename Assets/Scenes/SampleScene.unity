@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c1f5252e9a98d4098a119f4b5d818e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 10
   turnSpeed: 222
   rend: {fileID: 1579752550}
   timer: 0

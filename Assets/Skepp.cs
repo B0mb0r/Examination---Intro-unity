@@ -17,7 +17,7 @@ public class Skepp : MonoBehaviour
         //När spelet startas placeras man på en random location
         transform.position = new Vector3(Random.Range(-9f, 9f), Random.Range(-5f, 5f));
         //Skeppets fart blir random vid start av spel.
-        speed = Random.Range(4, 8);
+        speed = Random.Range(10, 15);
     }
 
     // Update is called once per frame
@@ -81,15 +81,15 @@ public class Skepp : MonoBehaviour
         {
             transform.position = new Vector3(-9, transform.position.y, 0);
         }
-        if (transform.position.x <= -9)
+        if (transform.position.x < -9)
         {
             transform.position = new Vector3(9, transform.position.y, 0);
         }
-        if (transform.position.y >= 5)
+        if (transform.position.y > 5)
         {
             transform.position = new Vector3(transform.position.x, -5, 0);
         }
-        if (transform.position.y <= -5)
+        if (transform.position.y < -5)
         {
             transform.position = new Vector3(transform.position.x, 5, 0);
         }
